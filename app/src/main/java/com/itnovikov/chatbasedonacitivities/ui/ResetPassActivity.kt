@@ -1,5 +1,7 @@
 package com.itnovikov.chatbasedonacitivities.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +18,12 @@ class ResetPassActivity : BaseActivity() {
         setContentView(binding.root)
         observeViewModel()
         configureButton()
+    }
+
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, ResetPassActivity::class.java)
+        }
     }
 
     private fun observeViewModel() {

@@ -1,5 +1,6 @@
 package com.itnovikov.chatbasedonacitivities.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -19,6 +20,12 @@ class RegistrationActivity : BaseActivity() {
         configureButton()
     }
 
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, RegistrationActivity::class.java)
+        }
+    }
+
     private fun observeViewModel() {
         viewModel.getError().observe(this) {
             Snackbar.make(binding.root, it, Snackbar.LENGTH_SHORT).show()
@@ -26,7 +33,7 @@ class RegistrationActivity : BaseActivity() {
 
         viewModel.getAuthorizedUser().observe(this) {
             if (it != null) {
-                startActivity(Intent(this, ChatListActivity::class.java))
+                startActivity(ChatListActivity.newIntent(this, it.uid))
                 finish()
             }
         }

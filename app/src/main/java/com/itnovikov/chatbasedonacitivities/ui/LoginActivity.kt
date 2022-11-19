@@ -1,5 +1,6 @@
 package com.itnovikov.chatbasedonacitivities.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -19,6 +20,12 @@ class LoginActivity : BaseActivity() {
         configureButtons()
     }
 
+    companion object {
+        fun newIntent(context: Context): Intent {
+            return Intent(context, LoginActivity::class.java)
+        }
+    }
+
     private fun observeViewModel() {
         viewModel.getError().observe(this) {
             if (it != null) {
@@ -28,7 +35,7 @@ class LoginActivity : BaseActivity() {
 
         viewModel.getUser().observe(this) {
             if (it != null) {
-                startActivity(Intent(this, ChatListActivity::class.java))
+                startActivity(ChatListActivity.newIntent(this, it.uid))
                 finish()
             }
         }
@@ -42,11 +49,11 @@ class LoginActivity : BaseActivity() {
         }
 
         binding.buttonSignUp.setOnClickListener {
-            startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(RegistrationActivity.newIntent(this))
         }
 
         binding.buttonForgotPassword.setOnClickListener {
-            startActivity(Intent(this, ResetPassActivity::class.java))
+            startActivity(ResetPassActivity.newIntent(this))
         }
     }
 }

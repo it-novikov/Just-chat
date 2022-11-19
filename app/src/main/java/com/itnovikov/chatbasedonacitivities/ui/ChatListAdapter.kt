@@ -22,7 +22,7 @@ class ChatListAdapter : ListAdapter<User, ChatListViewHolder>(ChatListDiffCallba
     override fun onBindViewHolder(holder: ChatListViewHolder, position: Int) {
         val user = getItem(position)
         holder.textViewName.text = user.name
-        if (user.networkStatus) {
+        if (user.online) {
             holder.viewNetworkStatus.setBackgroundResource(R.drawable.circle_green)
         } else {
             holder.viewNetworkStatus.setBackgroundResource(R.drawable.circle_red)

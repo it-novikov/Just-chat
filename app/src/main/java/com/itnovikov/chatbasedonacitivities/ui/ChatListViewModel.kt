@@ -16,7 +16,7 @@ class ChatListViewModel(application: Application) : AndroidViewModel(application
 
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     private var firebaseDatabase = FirebaseDatabase.getInstance()
-    private var databaseReference = firebaseDatabase.getReference("Chats")
+    private var databaseReference = firebaseDatabase.getReference("Users")
 
     private val onCancelledError = MutableLiveData<String>()
     private val authorizedUser = MutableLiveData<FirebaseUser>()
@@ -29,7 +29,13 @@ class ChatListViewModel(application: Application) : AndroidViewModel(application
         getAllUsers()
     }
 
+    fun setNetworkStatus(isOnline: Boolean) {
+        val firebaseUser = auth.currentUser ?: return
+        databaseReference.child(firebaseUser.uid).child("online").setValue(isOnline)
+    }
+
     fun signOut() {
+        setNetworkStatus(false)
         auth.signOut()
     }
 
@@ -48,10 +54,13 @@ class ChatListViewModel(application: Application) : AndroidViewModel(application
     private fun getAllUsers() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val usersFromDatabase = ArrayList<User>()
+                val currentUser = auth.currentUser ?: return
+                val usersFromDatabase = arrayListOf<User>()
                 for (dataSnapshot in snapshot.children) {
                     val user = dataSnapshot.getValue(User::class.java) ?: return
-                    usersFromDatabase.add(user)
+                    if (user.id != currentUser.uid) {
+                        usersFromDatabase.add(user)
+                    }
                 }
                 users.postValue(usersFromDatabase)
             }
