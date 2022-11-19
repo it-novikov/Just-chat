@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.ResetPassActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Password recovery"
+        android:textAlignment="center"
+        android:textSize="42sp"
+        android:textColor="@color/purple_500" />
+
+    <EditText
+        android:id="@+id/editTextResetEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:hint="Email"/>
+
+    <Button
+        android:id="@+id/buttonResetPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Reset password"/>
+
+</LinearLayout>

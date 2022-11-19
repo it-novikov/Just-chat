@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".ui.RegistrationActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="42sp"
+        android:textAlignment="center"
+        android:text="Registration"
+        android:textColor="@color/purple_500"/>
+
+    <EditText
+        android:id="@+id/editTextRegEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/editTextRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:hint="Password"/>
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:hint="First name"/>
+
+    <EditText
+        android:id="@+id/editTextSecondName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:hint="Second name"/>
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Sign up"/>
+
+</LinearLayout>

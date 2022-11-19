@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913096693674",
+    "project_id": "chatbasedonactivities",
+    "storage_bucket": "chatbasedonactivities.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913096693674:android:b69101770d074e05a0fdd3",
+        "android_client_info": {
+          "package_name": "com.itnovikov.chatbasedonacitivities"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913096693674-6lt5n3nhq733mgo9v1nqlf3ark5f7d66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxcJ5ipfyPZiuTdJanxXEfQ_CeDJYnGw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913096693674-6lt5n3nhq733mgo9v1nqlf3ark5f7d66.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
